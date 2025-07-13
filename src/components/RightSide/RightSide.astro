@@ -1,0 +1,12 @@
+---
+import ProjectCard from "./ProjectCard.astro"
+import {projects} from "../../data/projects";
+---
+<div>
+	<h2 class="text-3xl font-bold mb-6">Projects</h2>
+	<div class="grid gap-6">
+  	{projects.map(project => (
+    	<ProjectCard {...project} />
+  	))}
+  </div>
+</div>

@@ -6,14 +6,22 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    title: "Minimal Portfolio",
-    description: "A lightweight personal website using Astro and Tailwind.",
-    link: "https://example.com/portfolio",
+    title: "Multivariate Analysis of Southern Utah Water Quality",
+    description:
+      "Research project that utilizes principal component analysis to explore Southern Utah water trends and measure feature importance.",
+    link: "https://repository.utahtech.edu/items/da074a0e-cd24-4b12-9b0e-faf8d2aa0ce3",
   },
   {
-    title: "Weather App",
-    description: "A simple weather checker app using OpenWeather API.",
-    link: "https://example.com/weather",
+    title: "Lyric-Luminary",
+    description:
+      "This is a fun project that aims to view lyrics via the lens of a text classification model. I'm experimenting with TF-IDF to classify songs into a genere via the lyrics of the song.",
+    link: "https://github.com/angel-721/lyric-luminary",
+  },
+  {
+    title: "Godot Image Classification",
+    description:
+      "Use a pre-trained convolutional neural network to make in game predictions! Take screenshots of the game and classify if a cat or dog is in the scene with the power of machine learning.",
+
+    link: "https://github.com/angel-721/godot-image-classification",
   },
 ];
-
