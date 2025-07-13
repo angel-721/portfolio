@@ -1,0 +1,18 @@
+---
+export interface Props {
+  href: string;
+  icon: any;
+  hoverColor?: string;
+}
+
+const { href, icon: Icon, hoverColor = "lavender" } = Astro.props;
+---
+
+<a 
+  href={href}
+  target="_blank"
+  rel="noopener noreferrer"
+  class={`group bg-surface1 p-3 rounded-lg transition-all duration-300 hover:bg-surface2 hover:scale-110 hover:shadow-lg border border-overlay0 hover:border-${hoverColor}`}
+>
+  <Icon class={`w-6 h-6 text-subtext1 group-hover:text-${hoverColor}-30 transition-colors duration-300`} />
+</a>
