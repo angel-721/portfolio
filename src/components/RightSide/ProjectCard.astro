@@ -2,7 +2,7 @@
 import { MoveUpRightIcon } from "@lucide/astro";
 import { Image } from "astro:assets";
 
-const { title, description, link, image } = Astro.props;
+const { title, description, link, image, width, height } = Astro.props;
 ---
 
 <a 
@@ -15,7 +15,8 @@ const { title, description, link, image } = Astro.props;
 		<Image 
   		src={image} 
   		alt={title}
-  		inferSize={true}
+			width={width}
+			height={height}
   		class="w-[100px] h-[100px] rounded-lg object-cover flex-shrink-0"
 		/>
     <div class="flex-1">

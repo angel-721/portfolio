@@ -8,6 +8,8 @@ export interface Project {
   description: string;
   link: string;
   image: ImageMetadata;
+  width: Number;
+  height: Number;
 }
 
 export const projects: Project[] = [
@@ -17,6 +19,8 @@ export const projects: Project[] = [
       "Research project that utilizes principal component analysis to explore Southern Utah water trends and measure feature importance.",
     link: "https://repository.utahtech.edu/items/da074a0e-cd24-4b12-9b0e-faf8d2aa0ce3",
     image: mva,
+    width: 275,
+    height: 108,
   },
   {
     title: "Lyric-Luminary",
@@ -24,6 +28,8 @@ export const projects: Project[] = [
       "This is a fun project that aims to view lyrics via the lens of a text classification model. I'm experimenting with TF-IDF to classify songs into a genere via the lyrics of the song.",
     link: "https://github.com/angel-721/lyric-luminary",
     image: lyric,
+    width: 206,
+    height: 104,
   },
   {
     title: "Godot Image Classification",
@@ -32,5 +38,7 @@ export const projects: Project[] = [
 
     link: "https://github.com/angel-721/godot-image-classification",
     image: cat,
+    width: 196,
+    height: 131,
   },
 ];
