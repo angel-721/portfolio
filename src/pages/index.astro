@@ -14,10 +14,9 @@ const keywords = ['Software Engineer', 'Data Scientist', 'Web Developer'];
     <meta name="keywords" content={keywords.join(', ')}>
     <meta name="author" content="Angel Velasquez">
     
-    <!-- Preload critical CSS -->
-		<link rel="preload" href="../styles/global.css" as="style">
+    <!-- Import your global CSS here -->
+    <link rel="stylesheet" href="/src/styles/global.css">
     
-    <!-- Favicon links -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -26,30 +25,12 @@ const keywords = ['Software Engineer', 'Data Scientist', 'Web Developer'];
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content={Astro.generator}>
     <title>Angel Velasquez</title>
-    
-    <!-- Load critical CSS inline for above-the-fold content -->
-    <style>
-      body { 
-        font-family: system-ui, -apple-system, sans-serif;
-        background-color: #1e1e2e; /* Your ctp-base */
-        color: #cdd6f4; /* Your ctp-text */
-        margin: 0;
-        padding: 1.5rem;
-        max-width: 48rem;
-        margin: 0 auto;
-      }
-      .grid { display: grid; }
-      .grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .gap-20 { gap: 5rem; }
-      .mt-10 { margin-top: 2.5rem; }
-    </style>
   </head>
-  <body>
+  <body class="text-ctp-text bg-ctp-base font-sans p-6 max-w-3xl mx-auto">
     <div class="grid grid-cols-2 gap-20 mt-10">  
       <LeftSide/>
       <RightSide/>
     </div>
     <Footer/> 
-			<link rel="stylesheet" href="../styles/global.css">
   </body>
 </html>
