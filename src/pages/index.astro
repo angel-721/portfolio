@@ -2,24 +2,43 @@
 import '../styles/global.css'
 import ProjectCard from "../components/ProjectCard.astro";
 import { projects } from "../data/projects";
+
+// Consts
+const description = "Angel Velasquez aspires to be a Machine Learning Engineer and works on engineering usable and feature-rich software.";
+
+const keywords = [
+  'Software Engineer',
+	'Data Scientist',
+	'Web Developer',
+];
 ---
 
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Projects</title>
-    <link rel="stylesheet" href="/styles/global.css" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="keywords" content={keywords.join(', ')}>
+		<meta name="author" content="Angel Velasquez">
+    <title>Angel Velasquez</title>
   </head>
   <body class="bg-black text-white font-sans p-6 max-w-3xl mx-auto">
+		<!-- Content -->
 		<div class="grid grid-cols-2 gap-4">  
-			<div>Angel</div>  
+			<!-- Left Side -->
 			<div>
-    	<h1 class="text-3xl font-bold mb-6">Projects</h1>
-    	<div class="grid gap-6">
-    	  {projects.map(project => (
-    	    <ProjectCard {...project} />
-    	  ))}
-    	</div>
+				<h1>
+					Angel M. Velasquez
+				</h1>
+			</div>  
+			<!-- Right Side -->
+			<div>
+    		<h1 class="text-3xl font-bold mb-6">Projects</h1>
+    		<div class="grid gap-6">
+    		  {projects.map(project => (
+    		    <ProjectCard {...project} />
+    		  ))}
+    		</div>
 			</div>
 		</div>
   </body>
