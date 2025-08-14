@@ -42,10 +42,12 @@ const { experience } = Astro.props;
       <span 
         class="
           px-3 py-1.5 text-sm font-medium rounded-full
-          bg-ctp-peach text-ctp-base
+          bg-ctp-peach/90 text-ctp-base
           transition-all duration-200 ease-in-out
-          transform hover:scale-105 hover:bg-ctp-yellow
+          transform hover:scale-105 hover:bg-ctp-yellow/90
           cursor-default shadow-sm
+          border border-ctp-peach/20
+          hover:border-ctp-yellow/30
         "
       >
         {skill}
