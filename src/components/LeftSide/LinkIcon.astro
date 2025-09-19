@@ -7,12 +7,14 @@ export interface Props {
 const { href, icon: Icon } = Astro.props;
 ---
 
-<a 
+<a
   href={href}
   target="_blank"
   rel="noopener noreferrer"
   class="group transition-all duration-300 hover:scale-110 text-ctp-lavender hover:text-ctp-pink inline-flex items-center"
-  title={href.includes('mailto:') ? 'Email me' : `View on ${href.includes('github') ? 'GitHub' : 'LinkedIn'}`}
+  title={href.includes("mailto:")
+    ? "Email me"
+    : `View on ${href.includes("github") ? "GitHub" : "LinkedIn"}`}
 >
-  <Icon class="w-7 h-7 transition-colors duration-300" />
+  <Icon class="w-12 h-12 transition-colors duration-300" />
 </a>

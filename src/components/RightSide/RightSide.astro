@@ -6,10 +6,16 @@ import { experiences } from "../../data/experiences";
 ---
 
 <div class="space-y-12">
-  <div class="space-y-4 text-subtext1 leading-relaxed">
+  <div class="space-y-4 text-subtext1 leading-relaxed" id="about">
+    <h2
+      class="text-3xl font-bold mb-6 bg-gradient-to-r from-ctp-pink to-ctp-mauve bg-clip-text text-transparent"
+    >
+      About
+    </h2>
     <p>
-      I'm a Swiss Army knife of software development with professional experience
-      in developing virtual reality games, full-stack development, and teaching.
+      I'm a Swiss Army knife of software development with professional
+      experience in developing virtual reality games, full-stack development,
+      and teaching.
     </p>
     <p>
       I have a strong background in machine learning which goes along with my
@@ -24,20 +30,28 @@ import { experiences } from "../../data/experiences";
   </div>
 
   <section id="experience">
-    <h2 class="text-3xl font-bold mb-6 bg-gradient-to-r from-ctp-pink to-ctp-mauve bg-clip-text text-transparent">Experience</h2>
+    <h2
+      class="text-3xl font-bold mb-6 bg-gradient-to-r from-ctp-pink to-ctp-mauve bg-clip-text text-transparent"
+    >
+      Experience
+    </h2>
     <div class="space-y-8">
-      {experiences.map((experience) => (
-        <ExperienceCard experience={experience} />
-      ))}
+      {
+        experiences.map((experience) => (
+          <ExperienceCard experience={experience} />
+        ))
+      }
     </div>
   </section>
 
   <section id="projects" class="mt-12">
-    <h2 class="text-3xl font-bold mb-6 bg-gradient-to-r from-ctp-green to-ctp-teal bg-clip-text text-transparent">Projects</h2>
+    <h2
+      class="text-3xl font-bold mb-6 bg-gradient-to-r from-ctp-green to-ctp-teal bg-clip-text text-transparent"
+    >
+      Projects
+    </h2>
     <div class="grid gap-6">
-      {projects.map((project) => (
-        <ProjectCard {...project} />
-      ))}
+      {projects.map((project) => <ProjectCard {...project} />)}
     </div>
   </section>
 </div>

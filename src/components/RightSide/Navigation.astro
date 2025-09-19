@@ -6,19 +6,33 @@ interface Props {
 const { sections } = Astro.props;
 ---
 
-<nav class="mt-8">
+<nav class="hidden md:block mt-8">
   <ul class="space-y-4 text-lg">
-    {sections.map((section) => (
-      <li>
-        <a
-          href={`#${section.id}`}
-          class="block px-6 py-3 rounded-lg transition-colors duration-200 
+    <li class="fit-content">
+      <a
+        href="/resume.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-block px-3 py-1 rounded transition-colors duration-200
                  text-ctp-text hover:bg-ctp-surface1/50 hover:text-ctp-lavender
                  font-medium"
-        >
-          {section.label}
-        </a>
-      </li>
-    ))}
+      >
+        Resume
+      </a>
+    </li>
+    {
+      sections.map((section) => (
+        <li class="fit-content">
+          <a
+            href={`#${section.id}`}
+            class="inline-block px-3 py-1 rounded transition-colors duration-200 
+                 text-ctp-text hover:bg-ctp-surface1/50 hover:text-ctp-lavender
+                 font-medium"
+          >
+            {section.label}
+          </a>
+        </li>
+      ))
+    }
   </ul>
 </nav>
