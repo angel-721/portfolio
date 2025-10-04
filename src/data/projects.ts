@@ -5,14 +5,18 @@ import type { ImageMetadata } from "astro";
 
 export interface Project {
   title: string;
-  description: string;
+  description: string | null;
   link: string;
-  image: ImageMetadata;
-  width: Number;
-  height: Number;
+  linkText: string | null;
+  image: ImageMetadata | null;
+  width: Number | null;
+  height: Number | null;
+  company: string;
+  isGithub: boolean;
+  skills: string[] | null;
 }
 
-export const projects: Project[] = [
+export const projects: Partial<Project>[] = [
   {
     title: "Multivariate Analysis of Southern Utah Water Quality",
     description:
@@ -21,6 +25,9 @@ export const projects: Project[] = [
     image: mva,
     width: 275,
     height: 108,
+    company: "Utah Tech Research",
+    isGithub: true,
+    skills: ["Python", "Jupyter", "Scikit-learn"],
   },
   {
     title: "Lyric-Luminary",
@@ -30,6 +37,9 @@ export const projects: Project[] = [
     image: lyric,
     width: 206,
     height: 104,
+    company: "",
+    isGithub: true,
+    skills: ["Python", "Go", "Svelte", "Scikit-learn"],
   },
   {
     title: "Godot Image Classification",
@@ -40,5 +50,114 @@ export const projects: Project[] = [
     image: cat,
     width: 196,
     height: 131,
+    company: "Code Camp 2023",
+    isGithub: true,
+    skills: ["Python", "Godot", "Numpy", "PyTorch"],
+  },
+  // Partial Projects
+  {
+    title: "BlackJack Deck Counter",
+    link: "https://github.com/angel-721/yolo-blackjack-hand-detection",
+    company: "",
+    isGithub: true,
+    skills: ["Python", "Ultralytics", "OpenCV"],
+  },
+  {
+    title: "XSCI 3054",
+    company: "Utah Tech Online",
+    link: "https://www.youtube.com/watch?v=aqx4HUE_pnM",
+    linkText: "Demo Video",
+    skills: ["C#", "Unity", "Oculus"],
+  },
+  {
+    title: "PHYSICS 2215",
+    company: "Utah Tech Online",
+    link: "https://www.youtube.com/watch?v=ead660LGiRM",
+    linkText: "Demo Video",
+    skills: ["C#", "Unity", "Oculus"],
+  },
+  {
+    title: "Lehigh TRAC Program Website(Maintainer)",
+    company: "Lehigh TRAC",
+    skills: ["Python", "Flask,", "SQL", "HTML/CSS"],
+    link: "https://trac.lehigh.edu/",
+    linkText: "https://trac.lehigh.edu/",
+  },
+  {
+    title: "NBA Player Style Unsupervised Clustering",
+    company: "",
+    skills: ["R"],
+    link: "https://github.com/angel-721/nba-player-clustering-r",
+    isGithub: true,
+  },
+  {
+    title: "Ultimate Fight Predictor",
+    company: "",
+    skills: ["Python", "MongoDB", "Express", "Vue", "Scikit-learn"],
+    link: "https://github.com/angel-721/ultimate-fight-predictor",
+    isGithub: true,
+  },
+  {
+    title: "Tapology Python Parser",
+    company: "",
+    skills: ["Python", "Beautiful Soup"],
+    link: "https://github.com/angel-721/tapology-python-parser",
+    isGithub: true,
+  },
+  {
+    title: "Tweepy Media Bot",
+    company: "",
+    skills: ["Python", "SQL", "Twitter API", "AWS", "Bash"],
+    link: "https://github.com/angel-721/tweepy-media-bot",
+    isGithub: true,
+  },
+  {
+    title: "Godot(HTTP Client Unit Test)",
+    company: "Open Source Contribution",
+    skills: ["C++"],
+    link: "https://github.com/godotengine/godot/pull/76636",
+    isGithub: true,
+  },
+  {
+    title: "MyMood",
+    company: "Open Source Contribution",
+    skills: ["Kotlin", "Android"],
+    link: "https://github.com/NimaKhajehpour/MyMood/pull/19",
+    isGithub: true,
+  },
+  {
+    title: "NookBeats",
+    company: "",
+    skills: ["Kotlin", "Android"],
+    link: "",
+    linkText: "",
+  },
+  {
+    title: "MindJot",
+    company: "",
+    skills: ["JavaScript", "HTML/CSS", "Python", "Flask", "SQL"],
+    link: "",
+    linkText: "",
+  },
+  {
+    title: "Tuneleaf",
+    company: "",
+    skills: ["JavaScript", "HTML/CSS", "Python", "Flask", "SQL"],
+    link: "",
+    linkText: "",
+  },
+  {
+    title: "Image to ASCII Converter",
+    company: "",
+    skills: ["Java"],
+    link: "https://github.com/angel-721/java-image-ascii-converter",
+    isGithub: true,
+  },
+  {
+    title: "Compubox Python",
+    company: "",
+    skills: ["Python", "SQL"],
+    link: "https://github.com/angel-721/compubox-python",
+    isGithub: true,
   },
 ];

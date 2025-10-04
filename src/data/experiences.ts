@@ -11,20 +11,50 @@ export interface Experience {
 export const experiences: Experience[] = [
   {
     title: "Software Engineer",
-    company: "Tech Corp",
-    companyLink: "https://example.com/tech-corp",
-    startDate: "2022-01",
+    company: "Tdooz",
+    companyLink: "https://tdooz.com/",
+    startDate: "May 2025",
     endDate: "Present",
-    description: "Developed and maintained web applications using modern JavaScript frameworks. Collaborated with cross-functional teams to deliver high-quality software solutions.",
-    skills: ["TypeScript", "React", "Node.js", "AWS"]
+    description:
+      "Developed and maintained web applications using modern JavaScript frameworks. Collaborated with cross-functional teams to deliver high-quality software solutions.",
+    skills: ["TypeScript", "React", "Go"],
   },
   {
-    title: "Data Analyst",
-    company: "Data Insights Inc.",
-    companyLink: "https://example.com/data-insights",
-    startDate: "2020-06",
-    endDate: "2021-12",
-    description: "Analyzed large datasets to provide business insights and recommendations. Created dashboards and reports to visualize data for stakeholders.",
-    skills: ["Python", "SQL", "Tableau", "Pandas"]
-  }
+    title: "Software Engineer",
+    company: "Ilico Genetics",
+    companyLink: "https://ilicogenetics.com/",
+    startDate: "Oct. 2024",
+    endDate: "May 2025",
+    description:
+      "Analyzed large datasets to provide business insights and recommendations. Created dashboards and reports to visualize data for stakeholders.",
+    skills: ["Python", "Scikit-learn", "React.js", "Figma", "Express.js"],
+  },
+  {
+    title: "Classroom Technology Student Assistant",
+    company: "Lehigh University-LTS",
+    startDate: "Sep. 2024",
+    endDate: "May 2025",
+    description:
+      "Assisted in the setup and maintenance of classroom technology. Provided technical support to faculty and students.",
+    skills: ["Python", "SQL", "Unity", "Flask", "Git"],
+  },
+  {
+    title: "VR Software Engineer",
+    company: "Utah Tech University",
+    companyLink: "https://online.utahtech.edu/immersive/",
+    startDate: "May 2023",
+    endDate: "Aug. 2024",
+    description:
+      "Developed and maintained web applications using modern JavaScript frameworks. Collaborated with cross-functional teams to deliver high-quality software solutions.",
+    skills: ["Unity", "C#", "SCM"],
+  },
+  {
+    title: "Code School Instructor",
+    company: "Utah Tech University",
+    startDate: "May 2024",
+    endDate: "July 2024",
+    description:
+      "Taught back-end web development concepts to Utah Tech University students and St. George community members in a 9-week summer program.",
+    skills: ["Express.js", "Vue.js", "Node"],
+  },
 ];

@@ -1,9 +1,21 @@
 ---
-import {GithubIcon, LinkedinIcon, MailIcon} from "@lucide/astro";
-import LinkIcon from "./LinkIcon.astro"
+import {
+    GithubIcon,
+    LinkedinIcon,
+    MailIcon,
+    FileTextIcon,
+} from "@lucide/astro";
+import LinkIcon from "./LinkIcon.astro";
 ---
-<div class="flex gap-5 pl-1 mt-8">
-  <LinkIcon href="https://github.com/angel-721" icon={GithubIcon} />
-  <LinkIcon href="https://linkedin.com/in/angel-m-velasquez" icon={LinkedinIcon} />
-  <LinkIcon href="mailto:angelm.velasquez@proton.me" icon={MailIcon} />
+
+<div class="flex gap-5 pl-1 mt-2 md:mt-8 mb-2 md:mb-50 fit-content">
+    <LinkIcon href="https://github.com/angel-721" icon={GithubIcon} />
+    <LinkIcon
+        href="https://linkedin.com/in/angel-m-velasquez"
+        icon={LinkedinIcon}
+    />
+    <LinkIcon href="mailto:angelm.velasquez@proton.me" icon={MailIcon} />
+    <div class="md:hidden">
+        <LinkIcon href="/resume.pdf" icon={FileTextIcon} />
+    </div>
 </div>
