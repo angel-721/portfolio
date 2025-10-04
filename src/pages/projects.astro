@@ -1,50 +1,293 @@
 ---
-import LeftSide from "../components/LeftSide/LeftSide.astro";
-import RightSide from "../components/RightSide/RightSide.astro";
-import Footer from "../components/Footer.astro";
+import { projects } from "../data/projects";
+import { ArrowLeftIcon, GithubIcon } from "@lucide/astro";
 import "../styles/global.css";
 
 const description =
-  "Angel Velasquez aspires to be a Machine Learning Engineer and works on engineering usable and feature-rich software.";
-const keywords = ["Software Engineer", "Data Scientist", "Web Developer"];
+    "Angel Velasquez's complete project repository - all projects in one place.";
+const keywords = [
+    "Software Engineer",
+    "Data Scientist",
+    "Web Developer",
+    "Projects",
+];
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="description" content={description} />
-    <meta name="keywords" content={keywords.join(", ")} />
-    <meta name="author" content="Angel Velasquez" />
+<html lang="en" class="dark">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="description" content={description} />
+        <meta name="keywords" content={keywords.join(", ")} />
+        <meta name="author" content="Angel Velasquez" />
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="/apple-touch-icon.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/favicon-32x32.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="/favicon-16x16.png"
+        />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Angel Velasquez</title>
-  </head>
-  <body
-    class="text-ctp-text bg-ctp-base font-sans p-6 max-w-5xl mx-auto min-h-screen relative"
-  >
-    <div class="flex w-full">
-      <!-- Left Side - Fixed -->
-      <div class="fixed w-[calc(50%-2.5rem)] pr-10">
-        <LeftSide />
-      </div>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content={Astro.generator} />
+        <title>Projects - Angel Velasquez</title>
+    </head>
+    <body
+        class="text-ctp-text bg-ctp-base font-sans max-w-6xl mx-auto min-h-screen p-6"
+    >
+        <div class="max-w-5xl mx-auto">
+            <!-- Back to Home Link -->
+            <a
+                href="/"
+                class="inline-flex items-center gap-2 text-ctp-lavender hover:text-ctp-pink hover:no-underline group transition-colors duration-200 mb-8"
+            >
+                <ArrowLeftIcon
+                    class="w-5 h-5 transition-transform duration-200 group-hover:-translate-x-1"
+                />
+                Back To Home Page
+            </a>
 
-      <!-- Right Side - Scrollable -->
-      <div class="w-1/2 ml-auto pl-10">
-        <div class="min-h-screen flex flex-col">
-          <div class="flex-1">
-            <RightSide />
-          </div>
-          <div class="mt-12">
-            <Footer />
-          </div>
+            <!-- Page Title -->
+            <h1 class="text-3xl md:text-4xl font-bold text-ctp-rosewater mb-8">
+                Project Repository
+            </h1>
+
+            <!-- Desktop Projects Table -->
+            <div class="hidden md:block overflow-x-auto">
+                <table class="w-full border-collapse">
+                    <thead>
+                        <tr class="border-b border-ctp-surface1">
+                            <th
+                                class="text-left py-4 px-4 font-semibold text-ctp-rosewater-50"
+                            >
+                                Project
+                            </th>
+                            <th
+                                class="text-left py-4 px-4 font-semibold text-ctp-rosewater-50"
+                            >
+                                Company
+                            </th>
+                            <th
+                                class="text-left py-4 px-4 font-semibold text-ctp-rosewater-50"
+                            >
+                                Technologies
+                            </th>
+                            <th
+                                class="text-left py-4 px-4 font-semibold text-ctp-rosewater-50"
+                            >
+                                Link
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            projects.map((project, index) => (
+                                <tr class="border-b border-ctp-surface0">
+                                    <td class="py-3 px-4">
+                                        <h3 class="font-semibold">
+                                            {project.title}
+                                        </h3>
+                                    </td>
+                                    <td class="py-3 px-4">
+                                        {project.company ? (
+                                            <span class="text-ctp-peach font-medium">
+                                                {project.company}
+                                            </span>
+                                        ) : (
+                                            <span class="text-ctp-lavender italic">
+                                                Personal
+                                            </span>
+                                        )}
+                                    </td>
+                                    <td class="py-3 px-4">
+                                        {project.skills &&
+                                        project?.skills.length > 0 ? (
+                                            <div class="flex flex-wrap gap-1">
+                                                {project?.skills.map(
+                                                    (skill, skillIndex) => (
+                                                        <span
+                                                            class="skill-pill px-2 py-1 text-xs font-medium rounded-full
+                                                               text-ctp-base transition-all duration-200 ease-in-out
+                                                               cursor-default shadow-sm"
+                                                            data-skill-index={`${index}-${skillIndex}`}
+                                                        >
+                                                            {skill}
+                                                        </span>
+                                                    ),
+                                                )}
+                                            </div>
+                                        ) : (
+                                            <span class="text-ctp-overlay1 italic text-sm">
+                                                Not specified
+                                            </span>
+                                        )}
+                                    </td>
+                                    <td class="py-3 px-4">
+                                        {project.isGithub ? (
+                                            <a
+                                                href={project.link}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                class="inline-flex items-center text-ctp-lavender hover:text-ctp-pink transition-colors duration-200"
+                                                title="View on GitHub"
+                                            >
+                                                <GithubIcon class="w-5 h-5" />
+                                            </a>
+                                        ) : (
+                                            <a
+                                                href={project.link}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                class="text-ctp-lavender hover:text-ctp-pink underline transition-colors duration-200"
+                                            >
+                                                {project.linkText}
+                                            </a>
+                                        )}
+                                    </td>
+                                </tr>
+                            ))
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Mobile Projects List -->
+            <div class="md:hidden space-y-4">
+                {
+                    projects.map((project) => (
+                        <div class="border border-ctp-surface1 rounded-lg p-4">
+                            <div class="flex justify-between items-start">
+                                <div class="flex-1">
+                                    {project.link ? (
+                                        <a
+                                            href={project.link}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            class="text-ctp-teal-50 hover:text-ctp-sapphire underline transition-colors duration-200"
+                                        >
+                                            <h3 class="font-semibold text-cpt-teal-50">
+                                                {project.title}
+                                            </h3>
+                                        </a>
+                                    ) : (
+                                        <h3 class="font-semibold text-ctp-text text-lg">
+                                            {project.title}
+                                        </h3>
+                                    )}
+                                    <div class="mt-1">
+                                        {project.company ? (
+                                            <span class="text-ctp-peach font-medium text-sm">
+                                                {project.company}
+                                            </span>
+                                        ) : (
+                                            <span class="text-ctp-lavender italic text-sm">
+                                                Personal
+                                            </span>
+                                        )}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    ))
+                }
+            </div>
         </div>
-      </div>
-    </div>
-  </body>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                // Catppuccin Mocha color palette for skill pills
+                const catppuccinColors = [
+                    {
+                        bg: "bg-ctp-rosewater",
+                        border: "border-ctp-rosewater/30",
+                    },
+                    {
+                        bg: "bg-ctp-flamingo",
+                        border: "border-ctp-flamingo/30",
+                    },
+                    {
+                        bg: "bg-ctp-pink",
+                        border: "border-ctp-pink/30",
+                    },
+                    {
+                        bg: "bg-ctp-mauve",
+                        border: "border-ctp-mauve/30",
+                    },
+                    {
+                        bg: "bg-ctp-red",
+                        border: "border-ctp-red/30",
+                    },
+                    {
+                        bg: "bg-ctp-maroon",
+                        border: "border-ctp-maroon/30",
+                    },
+                    {
+                        bg: "bg-ctp-peach",
+                        border: "border-ctp-peach/30",
+                    },
+                    {
+                        bg: "bg-ctp-yellow",
+                        border: "border-ctp-yellow/30",
+                    },
+                    {
+                        bg: "bg-ctp-green",
+                        border: "border-ctp-green/30",
+                    },
+                    {
+                        bg: "bg-ctp-teal",
+                        border: "border-ctp-teal/30",
+                    },
+                    {
+                        bg: "bg-ctp-sky",
+                        border: "border-ctp-sky/30",
+                    },
+                    {
+                        bg: "bg-ctp-sapphire",
+                        border: "border-ctp-sapphire/30",
+                    },
+                    {
+                        bg: "bg-ctp-blue",
+                        border: "border-ctp-blue/30",
+                    },
+                    {
+                        bg: "bg-ctp-lavender",
+                        border: "border-ctp-lavender/30",
+                    },
+                ];
+
+                // Function to get a seeded random color
+                function getColorForSkill(skillText: string, index: number) {
+                    let hash = 0;
+                    for (let i = 0; i < skillText.length; i++) {
+                        const char = skillText.charCodeAt(i);
+                        hash = (hash << 5) - hash + char;
+                        hash = hash & hash;
+                    }
+                    hash = hash + index;
+                    return catppuccinColors[
+                        Math.abs(hash) % catppuccinColors.length
+                    ];
+                }
+
+                // Apply colors to all skill pills
+                const skillPills = document.querySelectorAll(".skill-pill");
+                skillPills.forEach((pill, index) => {
+                    const skillText = pill?.textContent?.trim();
+                    const colorSet = getColorForSkill(skillText ?? "", index);
+                    pill.classList.add(colorSet.bg, colorSet.border);
+                });
+            });
+        </script>
+    </body>
 </html>
