@@ -1,38 +1,154 @@
 ---
 interface Props {
-  sections: Array<{ id: string; label: string }>;
+    sections: Array<{ id: string; label: string }>;
 }
 
 const { sections } = Astro.props;
 ---
 
 <nav class="hidden md:block mt-8">
-  <ul class="space-y-4 text-lg">
-    <li class="fit-content">
-      <a
-        href="/resume.pdf"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="inline-block px-3 py-1 rounded transition-colors duration-200
-                 text-ctp-text hover:bg-ctp-surface1/50 hover:text-ctp-lavender
-                 font-medium"
-      >
-        Resume
-      </a>
-    </li>
-    {
-      sections.map((section) => (
+    <ul class="space-y-4 text-lg">
         <li class="fit-content">
-          <a
-            href={`#${section.id}`}
-            class="inline-block px-3 py-1 rounded transition-colors duration-200 
-                 text-ctp-text hover:bg-ctp-surface1/50 hover:text-ctp-lavender
-                 font-medium"
-          >
-            {section.label}
-          </a>
+            <a
+                href="/resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="nav-link inline-block px-3 py-1 rounded transition-all font-medium relative"
+            >
+                Resume
+            </a>
         </li>
-      ))
-    }
-  </ul>
+        {
+            sections.map((section) => (
+                <li class="fit-content">
+                    <a
+                        href={`#${section.id}`}
+                        data-nav-link={section.id}
+                        class="nav-link inline-block px-3 py-1 rounded transition-all font-medium relative"
+                        style="color: rgb(209 213 219); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); text-shadow: none;"
+                    >
+                        <span class="relative z-10">{section.label}</span>
+                    </a>
+                </li>
+            ))
+        }
+    </ul>
 </nav>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        // Wait a bit for all content to load
+        setTimeout(() => {
+            const sections = document.querySelectorAll(
+                "#about, #experience, #projects",
+            );
+            const navLinks = document.querySelectorAll(".nav-link");
+            const scrollContainer = document.querySelector("#scroll-container");
+
+            if (!scrollContainer || sections.length === 0) {
+                console.error("Missing scroll container or sections");
+                return;
+            }
+
+            let currentActive: any = null;
+
+            // Create intersection observer
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                        if (
+                            entry.isIntersecting &&
+                            entry.target.id !== currentActive
+                        ) {
+                            currentActive = entry.target.id;
+
+                            // Remove active state from all nav links
+                            navLinks.forEach((link) => {
+                                //@ts-ignore style does not exist on Element
+                                link.style.color = "rgb(209 213 219)";
+                                //@ts-ignore style does not exist on Element
+                                link.style.fontWeight = "500";
+                                //@ts-ignore style does not exist on Element
+                                link.style.textShadow = "none";
+                            });
+
+                            // Add active state to current section's nav link
+                            const activeLink = document.querySelector(
+                                `[data-nav-link="${entry.target.id}"]`,
+                            );
+
+                            if (activeLink) {
+                                //@ts-ignore style does not exist on Element
+                                activeLink.style.color =
+                                    "rgb(var(--ctp-peach))";
+                                //@ts-ignore style does not exist on Element
+                                activeLink.style.fontWeight = "600";
+                                //@ts-ignore style does not exist on Element
+                                activeLink.style.textShadow =
+                                    "0 0 4px rgba(var(--ctp-peach), 0.3)";
+                            }
+                        }
+                    });
+                },
+                {
+                    root: scrollContainer,
+                    rootMargin: "-20% 0px -60% 0px",
+                    threshold: [0.1, 0.3, 0.5],
+                },
+            );
+
+            // Observe all sections
+            sections.forEach((section) => {
+                observer.observe(section);
+            });
+
+            // Set initial active state for "about" section
+            const aboutLink = document.querySelector('[data-nav-link="about"]');
+            if (aboutLink) {
+                //@ts-ignore, style does not exist on Element
+                aboutLink.style.color = "rgb(var(--ctp-peach))";
+                //@ts-ignore, style does not exist on Element
+                aboutLink.style.fontWeight = "600";
+                //@ts-ignore, style does not exist on Element
+                aboutLink.style.textShadow =
+                    "0 0 4px rgba(var(--ctp-peach), 0.3)";
+                currentActive = "about";
+            }
+
+            // Smooth scroll behavior for nav links
+            navLinks.forEach((link) => {
+                link.addEventListener("click", (e) => {
+                    const targetId = link.getAttribute("data-nav-link");
+
+                    // Only prevent default for section navigation links, not external links like resume
+                    if (targetId) {
+                        e.preventDefault();
+                        const targetElement = document.getElementById(
+                            targetId || "",
+                        );
+                        if (targetElement && scrollContainer) {
+                            const offsetTop = targetElement.offsetTop;
+                            scrollContainer.scrollTo({
+                                top: offsetTop - 20,
+                                behavior: "smooth",
+                            });
+                        }
+                    }
+                });
+            });
+        }, 100);
+    });
+</script>
+
+<style>
+    .nav-link:hover {
+        color: rgb(var(--ctp-peach)) !important;
+        font-weight: 600 !important;
+        text-shadow: 0 0 3px rgba(var(--ctp-peach), 0.4) !important;
+        transform: translateX(2px);
+    }
+
+    .nav-link {
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+</style>

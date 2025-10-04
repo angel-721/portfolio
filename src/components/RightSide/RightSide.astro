@@ -5,53 +5,46 @@ import { projects } from "../../data/projects";
 import { experiences } from "../../data/experiences";
 ---
 
-<div class="space-y-12">
-  <div class="space-y-4 text-subtext1 leading-relaxed" id="about">
-    <h2
-      class="text-3xl font-bold mb-6 bg-gradient-to-r from-ctp-pink to-ctp-mauve bg-clip-text text-transparent"
+<div class="space-y-8 md:space-y-12">
+    <div
+        class="space-y-3 md:space-y-4 text-subtext1 leading-relaxed text-sm md:text-base"
+        id="about"
     >
-      About
-    </h2>
-    <p>
-      I'm a Swiss Army knife of software development with professional
-      experience in developing virtual reality games, full-stack development,
-      and teaching.
-    </p>
-    <p>
-      I have a strong background in machine learning which goes along with my
-      data-driven approach to development to create the best product for the
-      client and users.
-    </p>
-    <p>
-      When I'm not programming, I like to lift weights, go on runs, and listen
-      to 80's music! I'm a sports analytics nerd to make up for my horrible
-      predictions.
-    </p>
-  </div>
-
-  <section id="experience">
-    <h2
-      class="text-3xl font-bold mb-6 bg-gradient-to-r from-ctp-pink to-ctp-mauve bg-clip-text text-transparent"
-    >
-      Experience
-    </h2>
-    <div class="space-y-8">
-      {
-        experiences.map((experience) => (
-          <ExperienceCard experience={experience} />
-        ))
-      }
+        <p>
+            I'm a Swiss Army knife of software development with professional
+            experience in developing virtual reality games, full-stack
+            development, and teaching.
+        </p>
+        <p>
+            I have a strong background in machine learning which goes along with
+            my data-driven approach to development to create the best product
+            for the client and users.
+        </p>
+        <p class="hidden md:block">
+            When I'm not programming, I like to lift weights, go on runs, and
+            listen to 80's music! I'm a sports analytics nerd to make up for my
+            horrible predictions.
+        </p>
     </div>
-  </section>
 
-  <section id="projects" class="mt-12">
-    <h2
-      class="text-3xl font-bold mb-6 bg-gradient-to-r from-ctp-green to-ctp-teal bg-clip-text text-transparent"
-    >
-      Projects
-    </h2>
-    <div class="grid gap-6">
-      {projects.map((project) => <ProjectCard {...project} />)}
-    </div>
-  </section>
+    <section id="experience">
+        <div class="space-y-8">
+            {
+                experiences.map((experience) => (
+                    <ExperienceCard experience={experience} />
+                ))
+            }
+        </div>
+    </section>
+
+    <section id="projects" class="mt-12">
+        <h3
+            class="text-3xl font-bold mb-6 bg-gradient-to-r from-ctp-peach to-ctp-yellow bg-clip-text text-transparent"
+        >
+            Projects
+        </h3>
+        <div class="grid gap-6">
+            {projects.map((project) => <ProjectCard {...project} />)}
+        </div>
+    </section>
 </div>
