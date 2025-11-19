@@ -16,8 +16,8 @@ export const experiences: Experience[] = [
     startDate: "May 2025",
     endDate: "Present",
     description:
-      "Developed and maintained web applications using modern JavaScript frameworks. Collaborated with cross-functional teams to deliver high-quality software solutions.",
-    skills: ["TypeScript", "React", "Go"],
+      "Worked on 5 different Go microservices and 2 different React frontends. I was able to build up new features such as automated payout systems on backend services while using the best state-management practices and TailwindCSS on the frontend to ensure that UI/UX for new features can be iterated through rapidly.",
+    skills: ["TypeScript", "React", "Go", "TailwindCSS"],
   },
   {
     title: "Software Engineer",
@@ -26,16 +26,16 @@ export const experiences: Experience[] = [
     startDate: "Oct. 2024",
     endDate: "May 2025",
     description:
-      "Analyzed large datasets to provide business insights and recommendations. Created dashboards and reports to visualize data for stakeholders.",
+      "Redesigned both the machine-learning pipeline on the backend and the UI/UX flow of the frontend. I created a FastAPI microservice which was able to speed up batch predictions by 200%. On the frontend I was able to clean up many views by utilizing data tables and frontend validation to create a more enjoyable experience for end-users.",
     skills: ["Python", "Scikit-learn", "React.js", "Figma", "Express.js"],
   },
   {
-    title: "Classroom Technology Student Assistant",
+    title: "Classroom Technology Graduate Assistant",
     company: "Lehigh University-LTS",
     startDate: "Sep. 2024",
     endDate: "May 2025",
     description:
-      "Assisted in the setup and maintenance of classroom technology. Provided technical support to faculty and students.",
+      "I maintained and enhanced the Lehigh TRAC program's Flask web-application by expanding admin tools to reduce the amount of manual database work. I also helped both Lehigh students and faculty with weekly VR workshops for classroom and community activities.",
     skills: ["Python", "SQL", "Unity", "Flask", "Git"],
   },
   {
@@ -45,7 +45,7 @@ export const experiences: Experience[] = [
     startDate: "May 2023",
     endDate: "Aug. 2024",
     description:
-      "Developed and maintained web applications using modern JavaScript frameworks. Collaborated with cross-functional teams to deliver high-quality software solutions.",
+      "Helped with the development of 14 multiplayer Unity VR lab experiences for two Utah Tech courses. In addition to building many small interactive systems, I optimized core network systems, such as making a render-texture sync system over 200% faster, so that students can save their progress on their labs and share their work with other students.",
     skills: ["Unity", "C#", "SCM"],
   },
   {
@@ -54,7 +54,7 @@ export const experiences: Experience[] = [
     startDate: "May 2024",
     endDate: "July 2024",
     description:
-      "Taught back-end web development concepts to Utah Tech University students and St. George community members in a 9-week summer program.",
+      "Taught a 9-week full-stack development summer program covering Vue, Express, MongoDB, and REST APIs to 19 students. I provided a lot of code architectural advice and debugging guidance to each of the six groups building their web applications.",
     skills: ["Express.js", "Vue.js", "Node"],
   },
 ];
