@@ -1,0 +1,34 @@
+---
+import type { Role } from "../../data/experiences";
+export interface Props {
+    role: Role;
+}
+
+const { role } = Astro.props;
+---
+
+<div class="pl-4 border-l-2 border-ctp-surface1">
+    <h3
+        class="text-base md:text-lg font-semibold text-text text-ctp-sapphire-100 mb-2"
+    >
+        {role.title}
+    </h3>
+    <p class="text-subtext1 leading-relaxed text-sm md:text-base mb-3">
+        {role.description}
+    </p>
+
+    <div class="flex flex-wrap gap-1.5" data-skills-container>
+        {
+            role.skills.map((skill, index) => (
+                <span
+                    class="skill-pill px-2 py-1 text-xs font-medium rounded-md
+                           text-ctp-base transition-all duration-200 ease-in-out
+                           transform hover:scale-105 cursor-default shadow-sm"
+                    data-skill-index={index}
+                >
+                    {skill}
+                </span>
+            ))
+        }
+    </div>
+</div>
