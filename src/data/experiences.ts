@@ -41,7 +41,7 @@ export const experiences: Experience[] = [
     ],
   },
   {
-    company: "Lehigh University",
+    company: "Lehigh University(Part-Time)",
     startDate: "Sep. 2024",
     endDate: "May 2025",
     roles: [
@@ -54,7 +54,7 @@ export const experiences: Experience[] = [
     ],
   },
   {
-    company: "Utah Tech University",
+    company: "Utah Tech University(Part-Time)",
     companyLink: "https://online.utahtech.edu/immersive/",
     startDate: "May 2023",
     endDate: "Aug. 2024",
