@@ -43,10 +43,9 @@ const { sections } = Astro.props;
                 "#about, #experience, #projects",
             );
             const navLinks = document.querySelectorAll(".nav-link");
-            const scrollContainer = document.querySelector("#scroll-container");
 
-            if (!scrollContainer || sections.length === 0) {
-                console.error("Missing scroll container or sections");
+            if (sections.length === 0) {
+                console.error("Missing sections");
                 return;
             }
 
@@ -91,7 +90,7 @@ const { sections } = Astro.props;
                     });
                 },
                 {
-                    root: scrollContainer,
+                    root: null, // Use viewport as root
                     rootMargin: "-20% 0px -60% 0px",
                     threshold: [0.1, 0.3, 0.5],
                 },
@@ -123,14 +122,13 @@ const { sections } = Astro.props;
                     // Only prevent default for section navigation links, not external links like resume
                     if (targetId) {
                         e.preventDefault();
-                        const targetElement = document.getElementById(
-                            targetId || "",
-                        );
-                        if (targetElement && scrollContainer) {
-                            const offsetTop = targetElement.offsetTop;
-                            scrollContainer.scrollTo({
-                                top: offsetTop - 20,
+                        const targetElement = document.getElementById(targetId);
+                        if (targetElement) {
+                            // Use native smooth scrolling
+                            targetElement.scrollIntoView({
                                 behavior: "smooth",
+                                block: "start",
+                                inline: "nearest",
                             });
                         }
                     }

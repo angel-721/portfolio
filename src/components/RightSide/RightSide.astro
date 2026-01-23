@@ -4,9 +4,10 @@ import ExperienceCard from "./ExperienceCard.astro";
 import { projects } from "../../data/projects";
 import { experiences } from "../../data/experiences";
 import { ArrowRightIcon } from "@lucide/astro";
+import Footer from "../Footer.astro";
 ---
 
-<div class="space-y-8 md:space-y-12">
+<div class="space-y-8 md:space-y-12 lg:py-24">
     <div
         class="space-y-3 md:space-y-4 text-subtext1 leading-relaxed text-sm md:text-base"
         id="about"
@@ -56,4 +57,6 @@ import { ArrowRightIcon } from "@lucide/astro";
             />
         </a>
     </section>
+
+    <Footer />
 </div>
