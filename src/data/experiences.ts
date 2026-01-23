@@ -41,7 +41,7 @@ export const experiences: Experience[] = [
     ],
   },
   {
-    company: "Lehigh University-LTS",
+    company: "Lehigh University",
     startDate: "Sep. 2024",
     endDate: "May 2025",
     roles: [
