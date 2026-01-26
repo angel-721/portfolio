@@ -13,7 +13,7 @@ export interface Experience {
 
 export const experiences: Experience[] = [
   {
-    company: "Tdooz(Contract)",
+    company: "Tdooz (Contract)",
     companyLink: "https://tdooz.com/",
     startDate: "May 2025",
     endDate: "Present",
