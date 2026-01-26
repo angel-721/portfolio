@@ -13,7 +13,7 @@ export interface Experience {
 
 export const experiences: Experience[] = [
   {
-    company: "Tdooz",
+    company: "Tdooz(Contract)",
     companyLink: "https://tdooz.com/",
     startDate: "May 2025",
     endDate: "Present",
@@ -41,7 +41,7 @@ export const experiences: Experience[] = [
     ],
   },
   {
-    company: "Lehigh University(Part-Time)",
+    company: "Lehigh University",
     startDate: "Sep. 2024",
     endDate: "May 2025",
     roles: [
@@ -54,7 +54,7 @@ export const experiences: Experience[] = [
     ],
   },
   {
-    company: "Utah Tech University(Part-Time)",
+    company: "Utah Tech University",
     companyLink: "https://online.utahtech.edu/immersive/",
     startDate: "May 2023",
     endDate: "Aug. 2024",
