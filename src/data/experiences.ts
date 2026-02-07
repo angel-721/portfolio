@@ -27,13 +27,13 @@ export const experiences: Experience[] = [
     ],
   },
   {
-    company: "Ilico Genetics (Contract)",
+    company: "Ilico Genetics",
     companyLink: "https://ilicogenetics.com/",
     startDate: "Oct. 2024",
     endDate: "May 2025",
     roles: [
       {
-        title: "Software Engineer",
+        title: "Software Engineer Intern",
         description:
           "Redesigned both the machine-learning pipeline on the backend and the UI/UX flow of the frontend. I created a FastAPI microservice which was able to speed up batch predictions by 200%. On the frontend I was able to clean up many views by utilizing data tables and frontend validation to create a more enjoyable experience for end-users.",
         skills: ["Python", "Scikit-learn", "React.js", "Figma", "Express.js"],
