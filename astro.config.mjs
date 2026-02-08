@@ -1,6 +1,7 @@
 // astro.config.mjs
 import { defineConfig } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
+import vercel from "@astrojs/vercel";
 
 export default defineConfig({
   vite: {
@@ -18,8 +19,16 @@ export default defineConfig({
       },
     },
   },
+
   build: {
     // Inline CSS for smaller files
     inlineStylesheets: "auto",
   },
+
+  adapter: vercel({
+    webAnalytics: {
+      enabled: true,
+    },
+  }),
 });
+
