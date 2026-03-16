@@ -99,7 +99,7 @@ export const projects: Partial<Project>[] = [
     company: "Lehigh TRAC",
     skills: ["Python", "Flask,", "SQL", "HTML/CSS"],
     link: "https://trac.lehigh.edu/",
-    linkText: "https://trac.lehigh.edu/",
+    linkText: "trac.lehigh.edu/",
   },
   {
     title: "NBA Player Style Unsupervised Clustering",
