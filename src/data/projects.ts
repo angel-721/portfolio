@@ -1,4 +1,4 @@
-import cat from "../assets/cat.webp";
+import bias from "../assets/bias.webp";
 import lyric from "../assets/lyric.webp";
 import mva from "../assets/mva.webp";
 import type { ImageMetadata } from "astro";
@@ -18,6 +18,20 @@ export interface Project {
 
 export const projects: Partial<Project>[] = [
   {
+    title: "The Bias Post",
+    description:
+      "Fine-tuned DistilBERT end-to-end classifer with chunked attention for media bias classification. Wrapped the model around a Next.js product while using LLM for label enhancement and storing results on Supabase",
+
+    link: "https://bias-post.angelv.dev",
+    image: bias,
+    width: 196,
+    height: 131,
+    company: "",
+    isGithub: false,
+    skills: ["Python", "PyTorch", "Next.js", "Polars"],
+    linkText: "bias-post.angelv.dev",
+  },
+  {
     title: "Multivariate Analysis of Southern Utah Water Quality",
     description:
       "Research project that utilizes principal component analysis to explore Southern Utah water trends and measure feature importance.",
@@ -30,24 +44,21 @@ export const projects: Partial<Project>[] = [
     skills: ["Python", "Jupyter", "Scikit-learn"],
   },
   {
-    title: "Lyric-Luminary",
+    title: "Lyric-Luminary(v2)",
     description:
       "This is a fun project that aims to view lyrics via the lens of a text classification model. I'm experimenting with TF-IDF to classify songs into a genere via the lyrics of the song.",
-    link: "https://github.com/angel-721/lyric-luminary",
+    link: "https://luminary.angelv.dev",
     image: lyric,
     width: 206,
     height: 104,
     company: "",
-    isGithub: true,
-    skills: ["Python", "Go", "Svelte", "Scikit-learn"],
+    isGithub: false,
+    linkText: "luminary.angelv.dev",
+    skills: ["Python", "Go", "Sveltekit", "Scikit-learn"],
   },
   {
     title: "Godot Image Classification",
-    description:
-      "Use a pre-trained convolutional neural network to make in game predictions! Take screenshots of the game and classify if a cat or dog is in the scene with the power of machine learning.",
-
     link: "https://github.com/angel-721/godot-image-classification",
-    image: cat,
     width: 196,
     height: 131,
     company: "Code Camp 2023",
