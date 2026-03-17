@@ -20,7 +20,7 @@ export const projects: Partial<Project>[] = [
   {
     title: "The Bias Post",
     description:
-      "Fine-tuned DistilBERT end-to-end classifer with chunked attention for media bias classification. Wrapped the model around a Next.js product while using LLM for label enhancement and storing results on Supabase",
+      "Fine-tuned DistilBERT end-to-end classifer with chunked attention for media bias classification. Wrapped the model around a Next.js product while using LLM for label enhancement and storing results on Supabase.",
 
     link: "https://bias-post.angelv.dev",
     image: bias,
