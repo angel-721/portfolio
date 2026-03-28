@@ -102,6 +102,13 @@ export const projects: Partial<Project>[] = [
     skills: ["C#", "Unity", "Oculus"],
   },
   {
+    title: "Guide on connecting Unity to Lehigh's Git instance",
+    company: "Lehigh LTS",
+    skills: ["Unity", "Git"],
+    link: "https://lehigh.atlassian.net/wiki/spaces/LKB/pages/324567481/Version+Control+for+Unity+using+Git+SourceTree",
+    linkText: "Connecting to Gogs - LTS Knowledge Base",
+  },
+  {
     title: "Lehigh TRAC Program Website(Maintainer)",
     company: "Lehigh TRAC",
     skills: ["Python", "Flask,", "SQL", "HTML/CSS"],
