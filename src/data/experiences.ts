@@ -71,7 +71,7 @@ export const experiences: Experience[] = [
         title: "VR Software Engineer",
         description:
           "I was a part of the development of 14 multiplayer Unity VR lab experiences for two Utah Tech courses. In addition to building many small interactive systems, I optimized core network systems, such as making a render-texture sync system over 200% faster, so that students can save their progress on their labs and share their work with other students.",
-        skills: ["Unity", "C#", "SCM"],
+        skills: ["Unity", "C#"],
       },
       {
         title: "Code School Instructor",
