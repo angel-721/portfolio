@@ -81,6 +81,13 @@ export const projects: Partial<Project>[] = [
     skills: ["Rust"],
   },
   {
+    title: "Code School Curriculum",
+    company: "Utah Tech University",
+    link: "https://github.com/angel-721/code-school-2024-resources",
+    isGithub: true,
+    skills: ["Vue.js", "Express.js", "JavaScript", "MongoDB"],
+  },
+  {
     title: "XSCI 3054",
     company: "Utah Tech University",
     link: "https://www.youtube.com/watch?v=aqx4HUE_pnM",
