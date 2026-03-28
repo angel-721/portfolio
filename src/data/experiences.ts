@@ -76,7 +76,7 @@ export const experiences: Experience[] = [
       {
         title: "Code School Instructor",
         description:
-          "I taught a 9-week full-stack development summer program covering Vue, Express, MongoDB, and REST APIs to 19 students along side one other instructor. I guided 6 groups through the fullstack development lifecycle, advising on API design, feature scoping, and (a lot) of debugging.",
+          "I taught a 9-week full-stack development summer program covering Vue, Express, MongoDB, and REST APIs to 19 students along side one other instructor. I guided 6 groups through the full-stack development lifecycle, advising on API design, feature scoping, and (a lot) of debugging.",
         skills: ["Express.js", "Vue.js", "Node", "MongoDB"],
       },
     ],
