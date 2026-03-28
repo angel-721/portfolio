@@ -22,7 +22,15 @@ export const experiences: Experience[] = [
         title: "Software Engineer",
         description:
           "Worked on 5 different Go microservices and 2 different React frontends. I was able to build up new features such as automated payout systems on backend services while using the best state-management practices and TailwindCSS on the frontend to ensure that UI/UX for new features can be iterated through rapidly.",
-        skills: ["TypeScript", "React", "Go", "TailwindCSS"],
+        skills: [
+          "TypeScript",
+          "React",
+          "Go",
+          "PostgreSQL",
+          "Docker",
+          "AWS",
+          "Stripe",
+        ],
       },
     ],
   },
