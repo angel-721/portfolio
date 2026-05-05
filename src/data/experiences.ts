@@ -38,7 +38,7 @@ export const experiences: Experience[] = [
     company: "Ilico Genetics",
     companyLink: "https://ilicogenetics.com/",
     startDate: "Oct. 2024",
-    endDate: "May 2025",
+    endDate: "May 2026",
     roles: [
       {
         title: "Software Engineer Intern",
