@@ -13,13 +13,13 @@ export interface Experience {
 
 export const experiences: Experience[] = [
   {
-    company: "Tdooz (Contract)",
+    company: "Tdooz",
     companyLink: "https://tdooz.com/",
     startDate: "May 2025",
     endDate: "Present",
     roles: [
       {
-        title: "Software Engineer",
+        title: "Full-Stack Software Engineer",
         description:
           "I'm a full-stack engineer across 3 production applications that include a customer booking app, a vendor management portal, and an admin CRM. I designed and built cross-platform systems including a real-time messaging system deployed on AWS, an automated Stripe vendor payout system, and various full-stack features across Go microservices and React frontends.",
         skills: [
