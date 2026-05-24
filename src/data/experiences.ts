@@ -16,7 +16,7 @@ export const experiences: Experience[] = [
     company: "Tdooz",
     companyLink: "https://tdooz.com/",
     startDate: "May 2025",
-    endDate: "May 2026",
+    endDate: "Present",
     roles: [
       {
         title: "Full-Stack Software Engineer",
@@ -30,6 +30,7 @@ export const experiences: Experience[] = [
           "Docker",
           "AWS",
           "Stripe",
+          "React Native",
         ],
       },
     ],
