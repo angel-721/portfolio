@@ -7,7 +7,7 @@ import { ArrowRightIcon } from "@lucide/astro";
 import Footer from "../Footer.astro";
 ---
 
-<div class="space-y-8 md:space-y-12 lg:py-24">
+<div class="mt-20 lg:mt-0 space-y-8 md:space-y-12 lg:py-24 lg:w-[60%]">
     <div
         class="space-y-3 md:space-y-4 text-subtext1 leading-relaxed text-sm md:text-base"
         id="about"
@@ -24,26 +24,104 @@ import Footer from "../Footer.astro";
         </p>
         <p class="hidden md:block">
             When I'm not programming, I like to lift weights, go on runs, and
-            listen to 80's music! I'm a sports analytics nerd to make up for my
-            horrible predictions.
+            listen to 80's music!
         </p>
     </div>
 
     <section id="experience">
-        <div class="space-y-8">
-            {
-                experiences.map((experience) => (
-                    <ExperienceCard experience={experience} />
-                ))
-            }
+        <h2 class="text-2xl font-bold mb-8 text-ctp-rosewater md:hidden">Experience</h2>
+        <div class="flex flex-col md:flex-row gap-8">
+            <!-- Company List Sidebar -->
+            <div class="relative shrink-0 md:w-48">
+                <div class="flex md:flex-col overflow-x-auto md:overflow-x-visible pb-2 md:pb-0 border-b md:border-b-0 md:border-l border-ctp-surface1">
+                    {
+                        experiences.map((exp, index) => (
+                            <button
+                                class={`experience-btn px-4 py-3 text-left transition-all duration-200 text-sm font-medium border-b-2 md:border-b-0 md:border-l-2 whitespace-nowrap md:whitespace-normal md:-ml-[2px] -mb-[2px] md:mb-0
+                                ${index === 0 
+                                    ? 'text-ctp-blue border-ctp-blue bg-ctp-surface0/50' 
+                                    : 'text-subtext0 border-transparent hover:bg-ctp-surface0/30 hover:text-ctp-text'}`}
+                                data-index={index}
+                            >
+                                {exp.company}
+                            </button>
+                        ))
+                    }
+                </div>
+            </div>
+
+            <!-- Experience Card Content -->
+            <div class="flex-1 relative">
+                {
+                    experiences.map((exp, index) => (
+                        <div 
+                            class={`experience-content transition-all duration-300 ${index === 0 ? 'opacity-100 block' : 'opacity-0 hidden absolute top-0 left-0 w-full'}`} 
+                            data-index={index}
+                        >
+                            <ExperienceCard experience={exp} />
+                        </div>
+                    ))
+                }
+            </div>
         </div>
+
+        <a
+            href="/angel_velasquez_software_engineer_resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 text-2xl font-bold mb-6 text-ctp-rosewater hover:no-underline group transition-colors duration-200 mt-8"
+        >
+            <h3>View Full Resume</h3>
+            <ArrowRightIcon
+                class="w-8 h-8 transition-transform duration-200 group-hover:translate-x-1"
+            />
+        </a>
     </section>
 
-    <section id="projects" class="mt-12">
+    <script>
+        function setupExperienceTabs() {
+            const buttons = document.querySelectorAll('.experience-btn');
+            const contents = document.querySelectorAll('.experience-content');
+
+            buttons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const index = btn.getAttribute('data-index');
+                    
+                    // Update buttons
+                    buttons.forEach(b => {
+                        b.classList.remove('text-ctp-blue', 'border-ctp-blue', 'bg-ctp-surface0');
+                        b.classList.add('text-subtext0', 'border-transparent');
+                    });
+                    btn.classList.add('text-ctp-blue', 'border-ctp-blue', 'bg-ctp-surface0');
+                    btn.classList.remove('text-subtext0', 'border-transparent');
+
+                    // Update content
+                    contents.forEach(content => {
+                        const contentIndex = content.getAttribute('data-index');
+                        if (contentIndex === index) {
+                            content.classList.remove('hidden', 'opacity-0', 'absolute');
+                            content.classList.add('block', 'opacity-100');
+                        } else {
+                            content.classList.add('hidden', 'opacity-0', 'absolute');
+                            content.classList.remove('block', 'opacity-100');
+                        }
+                    });
+                });
+            });
+        }
+
+        // Run on initial load
+        setupExperienceTabs();
+
+        // Run on view transitions (if enabled)
+        document.addEventListener('astro:after-swap', setupExperienceTabs);
+    </script>
+
+    <section id="projects">
         <div class="grid gap-6">
             {
                 projects
-                    .slice(0, 3)
+                    .slice(0, 4)
                     .map((project) => <ProjectCard {...project} />)
             }
         </div>

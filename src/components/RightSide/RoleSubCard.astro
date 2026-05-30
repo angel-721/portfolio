@@ -2,26 +2,34 @@
 import type { Role } from "../../data/experiences";
 export interface Props {
     role: Role;
+    date?: string;
 }
 
-const { role } = Astro.props;
+const { role, date } = Astro.props;
 ---
 
-<div class="pl-4 border-l-2 border-ctp-surface1">
-    <h3
-        class="text-base md:text-lg font-semibold text-text text-ctp-sapphire-100 mb-2"
-    >
-        {role.title}
-    </h3>
-    <p class="text-subtext1 leading-relaxed text-sm md:text-base mb-3">
+<div class="mb-8 last:mb-0">
+    <div class="flex flex-col md:flex-row md:justify-between md:items-baseline mb-3 gap-1">
+        <h3
+            class="text-lg md:text-xl font-bold text-ctp-sapphire"
+        >
+            {role.title}
+        </h3>
+        {date && (
+            <span class="text-subtext1 text-sm font-medium whitespace-nowrap">
+                {date}
+            </span>
+        )}
+    </div>
+    <p class="text-subtext1 leading-relaxed text-sm md:text-base mb-4">
         {role.description}
     </p>
 
-    <div class="flex flex-wrap gap-1.5" data-skills-container>
+    <div class="flex flex-wrap gap-2" data-skills-container>
         {
             role.skills.map((skill, index) => (
                 <span
-                    class="skill-pill px-2 py-1 text-xs font-medium rounded-md
+                    class="skill-pill px-2.5 py-1 text-xs font-medium rounded-md
                            text-ctp-base transition-all duration-200 ease-in-out
                            transform hover:scale-105 cursor-default shadow-sm"
                     data-skill-index={index}

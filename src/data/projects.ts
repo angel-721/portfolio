@@ -1,6 +1,7 @@
 import bias from "../assets/bias.webp";
 import lyric from "../assets/lyric.webp";
 import mva from "../assets/mva.webp";
+import cat from "../assets/cat.webp";
 import type { ImageMetadata } from "astro";
 
 export interface Project {
@@ -59,6 +60,9 @@ export const projects: Partial<Project>[] = [
   {
     title: "Godot Image Classification",
     link: "https://github.com/angel-721/godot-image-classification",
+    description:
+      "Use a pre-trained convolutional neural network to make in game predictions! Take screenshots of the game and classify if a cat or dog is in the scene with the power of machine learning",
+    image: cat,
     width: 196,
     height: 131,
     company: "Code Camp 2023",
