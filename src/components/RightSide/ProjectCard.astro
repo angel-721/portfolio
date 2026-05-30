@@ -2,7 +2,7 @@
 import { MoveUpRightIcon } from "@lucide/astro";
 import { Image } from "astro:assets";
 
-const { title, description, link, image, width, height } = Astro.props;
+const { title, description, link, image, imageAlt, width, height } = Astro.props;
 ---
 
 <a
@@ -14,7 +14,7 @@ const { title, description, link, image, width, height } = Astro.props;
     <div class="flex gap-4">
         <Image
             src={image}
-            alt={title}
+            alt={imageAlt || title}
             width={width}
             height={height}
             class="w-[100px] h-[100px] rounded-lg object-cover flex-shrink-0"
@@ -22,12 +22,13 @@ const { title, description, link, image, width, height } = Astro.props;
         <div class="flex-1">
             <div class="flex mb-1">
                 <h2
-                    class="text-lg md:text-xl font-semibold flex-1 text-ctp-rosewater-100"
+                    class="text-lg md:text-xl font-semibold flex-1 text-ctp-rosewater"
                 >
                     {title}
                 </h2>
                 <MoveUpRightIcon
                     class="w-5 h-5 text-ctp-overlay1 group-hover:text-ctp-lavender group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300"
+                    aria-hidden="true"
                 />
             </div>
             <p class="text-ctp-text1 mb-2 text-sm md:text-base">

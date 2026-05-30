@@ -14,8 +14,7 @@ const { sections } = Astro.props;
                     <a
                         href={`#${section.id}`}
                         data-nav-link={section.id}
-                        class="nav-link inline-block px-3 py-1 rounded transition-all font-medium relative"
-                        style="color: rgb(209 213 219); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); text-shadow: none;"
+                        class="nav-link inline-block px-3 py-1 rounded transition-all font-medium relative text-ctp-subtext1"
                     >
                         <span class="relative z-10">{section.label}</span>
                     </a>
@@ -53,12 +52,8 @@ const { sections } = Astro.props;
 
                             // Remove active state from all nav links
                             navLinks.forEach((link) => {
-                                //@ts-ignore style does not exist on Element
-                                link.style.color = "rgb(209 213 219)";
-                                //@ts-ignore style does not exist on Element
-                                link.style.fontWeight = "500";
-                                //@ts-ignore style does not exist on Element
-                                link.style.textShadow = "none";
+                                link.classList.remove('text-ctp-peach', 'font-bold');
+                                link.classList.add('text-ctp-subtext1', 'font-medium');
                             });
 
                             // Add active state to current section's nav link
@@ -67,14 +62,8 @@ const { sections } = Astro.props;
                             );
 
                             if (activeLink) {
-                                //@ts-ignore style does not exist on Element
-                                activeLink.style.color =
-                                    "rgb(var(--ctp-peach))";
-                                //@ts-ignore style does not exist on Element
-                                activeLink.style.fontWeight = "600";
-                                //@ts-ignore style does not exist on Element
-                                activeLink.style.textShadow =
-                                    "0 0 4px rgba(var(--ctp-peach), 0.3)";
+                                activeLink.classList.remove('text-ctp-subtext1', 'font-medium');
+                                activeLink.classList.add('text-ctp-peach', 'font-bold');
                             }
                         }
                     });
@@ -94,13 +83,8 @@ const { sections } = Astro.props;
             // Set initial active state for "about" section
             const aboutLink = document.querySelector('[data-nav-link="about"]');
             if (aboutLink) {
-                //@ts-ignore, style does not exist on Element
-                aboutLink.style.color = "rgb(var(--ctp-peach))";
-                //@ts-ignore, style does not exist on Element
-                aboutLink.style.fontWeight = "600";
-                //@ts-ignore, style does not exist on Element
-                aboutLink.style.textShadow =
-                    "0 0 4px rgba(var(--ctp-peach), 0.3)";
+                aboutLink.classList.remove('text-ctp-subtext1', 'font-medium');
+                aboutLink.classList.add('text-ctp-peach', 'font-bold');
                 currentActive = "about";
             }
 

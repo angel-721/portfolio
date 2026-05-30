@@ -15,6 +15,9 @@ const { href, icon: Icon } = Astro.props;
     title={href.includes("mailto:")
         ? "Email me"
         : `View on ${href.includes("github") ? "GitHub" : "LinkedIn"}`}
+    aria-label={href.includes("mailto:")
+        ? "Email me"
+        : `View on ${href.includes("github") ? "GitHub" : "LinkedIn"}`}
 >
-    <Icon class="w-8 h-8 md:w-12 md:h-12 transition-colors duration-300" />
+    <Icon class="w-8 h-8 md:w-12 md:h-12 transition-colors duration-300" aria-hidden="true" />
 </a>

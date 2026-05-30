@@ -55,9 +55,11 @@ const allTechnologies = [...new Set(projects.flatMap(p => p.skills || []))].sort
                     <a
                         href="/"
                         class="inline-flex items-center gap-2 text-ctp-lavender hover:text-ctp-pink hover:no-underline group transition-colors duration-200 shrink-0"
+                        aria-label="Back to Home"
                     >
                         <ArrowLeftIcon
                             class="w-5 h-5 transition-transform duration-200 group-hover:-translate-x-1"
+                            aria-hidden="true"
                         />
                         <span class="font-bold text-sm uppercase tracking-widest">Home</span>
                     </a>
@@ -73,7 +75,7 @@ const allTechnologies = [...new Set(projects.flatMap(p => p.skills || []))].sort
                 <!-- Compact Filter Section -->
                 <div class="flex items-center gap-3">
                     <div class="flex items-center gap-2 text-ctp-subtext1">
-                        <FilterIcon class="w-4 h-4" />
+                        <FilterIcon class="w-4 h-4" aria-hidden="true" />
                         <label for="tech-filter" class="text-sm font-bold whitespace-nowrap">Filter:</label>
                     </div>
                     <div class="relative min-w-[140px]">
@@ -153,8 +155,8 @@ const allTechnologies = [...new Set(projects.flatMap(p => p.skills || []))].sort
                                                 {project?.skills.map(
                                                     (skill, skillIndex) => (
                                                         <span
-                                                            class="skill-pill px-2 py-1 text-xs font-medium rounded-full
-                                                               text-ctp-base transition-all duration-200 ease-in-out
+                                                            class="skill-pill px-2 py-1 text-xs font-bold rounded-full
+                                                               text-ctp-crust transition-all duration-200 ease-in-out
                                                                cursor-default shadow-sm"
                                                             data-skill-index={`${index}-${skillIndex}`}
                                                         >
@@ -177,8 +179,9 @@ const allTechnologies = [...new Set(projects.flatMap(p => p.skills || []))].sort
                                                 rel="noopener noreferrer"
                                                 class="inline-flex items-center text-ctp-lavender hover:text-ctp-pink transition-colors duration-200"
                                                 title="View on GitHub"
+                                                aria-label={`View ${project.title} on GitHub`}
                                             >
-                                                <GithubIcon class="w-5 h-5" />
+                                                <GithubIcon class="w-5 h-5" aria-hidden="true" />
                                             </a>
                                         ) : (
                                             <a
@@ -238,7 +241,7 @@ const allTechnologies = [...new Set(projects.flatMap(p => p.skills || []))].sort
                                     {project.skills && project.skills.length > 0 && (
                                         <div class="flex flex-wrap gap-1 mt-3">
                                             {project.skills.map((skill) => (
-                                                <span class="skill-pill px-2 py-0.5 text-[10px] font-medium rounded-full text-ctp-base shadow-sm">
+                                                <span class="skill-pill px-2 py-0.5 text-[10px] font-bold rounded-full text-ctp-crust shadow-sm">
                                                     {skill}
                                                 </span>
                                             ))}
