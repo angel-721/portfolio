@@ -55,7 +55,7 @@ export const experiences: Experience[] = [
     endDate: "May 2025",
     roles: [
       {
-        title: "Classroom Technology Graduate Assistant",
+        title: "Graduate Assistant",
         description:
           "I maintained and enhanced the Lehigh TRAC program's Flask web-application by expanding admin tools to reduce the amount of manual database work. I also helped both Lehigh students and faculty with weekly VR workshops for classroom and community activities.",
         skills: ["Python", "SQL", "Unity", "Flask", "Git"],
