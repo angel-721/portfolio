@@ -26,7 +26,8 @@ export const projects: Partial<Project>[] = [
 
     link: "https://bias-post.angelv.dev",
     image: bias,
-    imageAlt: "Screenshot of The Bias Post web application showing media bias classification.",
+    imageAlt:
+      "Screenshot of The Bias Post web application showing media bias classification.",
     width: 196,
     height: 131,
     company: "",
@@ -40,7 +41,8 @@ export const projects: Partial<Project>[] = [
       "Research project that utilizes principal component analysis to explore Southern Utah water trends and measure feature importance.",
     link: "https://repository.utahtech.edu/items/da074a0e-cd24-4b12-9b0e-faf8d2aa0ce3",
     image: mva,
-    imageAlt: "Graphical representation of water quality data analysis for Southern Utah.",
+    imageAlt:
+      "Graphical representation of water quality data analysis for Southern Utah.",
     width: 275,
     height: 108,
     company: "Utah Tech Research",
@@ -53,7 +55,8 @@ export const projects: Partial<Project>[] = [
       "This is a fun project that aims to view lyrics via the lens of a text classification model. I'm experimenting with TF-IDF to classify songs into a genere via the lyrics of the song.",
     link: "https://luminary.angelv.dev",
     image: lyric,
-    imageAlt: "Interface of Lyric-Luminary application for song genre classification.",
+    imageAlt:
+      "Interface of Lyric-Luminary application for song genre classification.",
     width: 206,
     height: 104,
     company: "",
@@ -65,9 +68,10 @@ export const projects: Partial<Project>[] = [
     title: "Godot Image Classification",
     link: "https://github.com/angel-721/godot-image-classification",
     description:
-      "Use a pre-trained convolutional neural network to make in game predictions! Take screenshots of the game and classify if a cat or dog is in the scene with the power of machine learning",
+      "Use a pre-trained convolutional neural network to make in game predictions! Take screenshots of the game and classify if a cat or dog is in the scene with the power of machine learning.",
     image: cat,
-    imageAlt: "Screenshot of Godot game engine interface with a cat being classified by a neural network.",
+    imageAlt:
+      "Screenshot of Godot game engine interface with a cat being classified by a neural network.",
     width: 196,
     height: 131,
     company: "Code Camp 2023",

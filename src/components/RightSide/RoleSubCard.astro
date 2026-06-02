@@ -1,4 +1,5 @@
 ---
+import { ChevronRight } from "@lucide/astro";
 import type { Role } from "../../data/experiences";
 export interface Props {
     role: Role;
@@ -21,9 +22,16 @@ const { role, date } = Astro.props;
             </span>
         )}
     </div>
-    <p class="text-subtext1 leading-relaxed text-sm md:text-base mb-4">
-        {role.description}
-    </p>
+    {role.bulletPoints && role.bulletPoints.length > 0 && (
+        <ul class="mb-4 space-y-2">
+            {role.bulletPoints.map((point) => (
+                <li class="flex items-start gap-2 text-subtext1 text-sm md:text-base leading-relaxed">
+                    <ChevronRight class="w-4 h-4 mt-1 flex-shrink-0 text-ctp-sapphire" aria-hidden="true" />
+                    <span>{point}</span>
+                </li>
+            ))}
+        </ul>
+    )}
 
     <div class="flex flex-wrap gap-2" data-skills-container>
         {
